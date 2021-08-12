@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+
+    <script src="https://kit.fontawesome.com/cc0fc94170.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/myCartSt.css">
+
+</head>
+<body>
+    <!-- Navbar & Header START -->
+    <div class="header-sec">
+        <div class="row">
+            <div class="col-md-4 col-sm-3 brand-logo">
+              <p><a href="#"><span class="no-same no-shop">LO</span><span class="no-same logo-shop">GO</span></a></p>
+            </div>
+    
+            <div class="col-md-7 col-sm-8 search-box-position">
+                <form class="search-box-style" action="">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit" class="search-btn">Search</button>
+                </form>
+            </div>
+    
+            <div class="col-md-1 col-sm-1">
+                <div class="dropdown">
+                  <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/Unknown_person.jpg" alt="">
+                  </a>
+                  <ul class="dropdown-menu register-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="loginForm.html">Log in</a></li>
+                    <li><a class="dropdown-item" href="signupForm.html">Sign Up</a></li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-bg">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <div class="d-flex myCartMenu me-2">
+                <a class="" href="#">Home</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#newest">Newest Arrival</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#newest">Top sale</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Category
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="index.html#laptop">Laptop</a></li>
+                <li><a class="dropdown-item" href="index.html#mobile">Mobile</a></li>
+                <li><a class="dropdown-item" href="index.html#headphone">Headphone</a></li>
+                <li><a class="dropdown-item" href="index.html#xBox">X-box</a></li>
+                <li><a class="dropdown-item" href="index.html#mouse">Mouse</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about-us">About us</a>
+            </li>
+          </ul>
+          <div class="myCartMenu">
+                <a href="myCart.html">
+                  CART <i class="fas fa-shopping-cart"></i>
+                </a>
+          </div>
+        </div>
+        
+      </div>
+    </nav>
+    <!-- Navbar & Header END -->
+
+    <!--Cart start -->
+    <div id="myShoppingCart" class="container my-5">
+      <h2 class="cart-title">Shopping Cart</h2>
+      <div class="cart-heading row mt-3 ms-1 py-1 text-white">
+          <div class="col-5">Products</div>
+          <div class="col-1 text-center">Price</div>
+          <div class="col-2 text-center">Unit</div>
+          <div class="col-3 text-center">Subtotal</div>
+          <div class="col-1 text-center">Remove</div>
+      </div>
+      <div id="product1" class="row ms-1 py-2 border-bottom border-dark">
+          <div class="col-5"><img class="img-fluid p-2" src="images/headPhone.png" alt=""><span class="ps-5 fontWtLg">Cool Dude Headphone</span></div>
+          <div class="col-1 text-center p-4"><span class="fontWtSm p-2">$<span>420</span></span></div>
+          <div class="col-2 text-center p-4 unit-case">
+              <button onclick="decreaseCaseCount()" class="btn inline-st"><i class="fas fa-minus"></i></button>
+              <input onchange="updateCasePrice()" id="case-count" class="inline-st form-control text-center" value="1">
+              <button onclick="increaseCaseCount()" class="btn btn-default inline-st"><i class="fas fa-plus"></i></button>          
+          </div>
+          <div class="col-3 text-center p-4"><span class="fontWtLg p-2">$<span>420</span></span></div>
+          <div class="col-1 text-center p-4"><img class="img-fluid remove-img-size" src="images/remove.png" alt=""></div>
+      </div>
+      <div id="product1" class="row ms-1 py-2 border-bottom border-dark">
+          <div class="col-5"><img class="img-fluid p-2" src="images/mouse2.jpg" alt=""><span class="ps-5 fontWtLg">Mouse mama</span></div>
+          <div class="col-1 text-center p-4"><span class="fontWtSm p-2">$<span>200</span></span></div>
+          <div class="col-2 text-center p-4 unit-case">
+              <button onclick="decreaseCaseCount()" class="btn inline-st"><i class="fas fa-minus"></i></button>
+              <input onchange="updateCasePrice()" id="case-count" class="inline-st form-control text-center" value="1">
+              <button onclick="increaseCaseCount()" class="btn btn-default inline-st"><i class="fas fa-plus"></i></button>
+                          
+          </div>
+          <div class="col-3 text-center p-4"><span class="fontWtLg p-2">$<span>200</span></span></div>
+          <div class="col-1 text-center p-4"><img class="img-fluid remove-img-size" src="images/remove.png" alt=""></div>
+      </div>
+      <div class="d-flex justify-content-end pe-3 pt-4">
+          <p><span class="fontWtSm">Total</span><span class="fontWtLg ps-3">$</span><span class="fontWtLg">620</span></p>
+      </div>
+      <div class="d-flex justify-content-end pe-3">
+          <a href="#"><button class="btn btn-danger text-white">Checkout</button></a>
+      </div>
+    </div>
+    <!--Cart END-->
+
+    <!--Footer START-->
+    <footer id="about-us">
+        <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col-lg-3 col-md-6 col-sm-12 text-white">
+                <h4 class="mb-4 mt-4">ABOUT US</h4>
+                <p class="py-1">
+                <i class="fas fa-map-marker-alt"></i><span class="ps-4">Chattogram, Bangladesh</span>
+                </p>
+                <p class="py-1">
+                <i class="fas fa-phone-alt"></i><span class="ps-4">123456</span>
+                </p>
+                <p class="py-1">
+                <i class="fas fa-envelope"></i><span class="ps-4">abc@gmail.com</span>
+                </p>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 text-white ps-5">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.895319014482!2d91.78320061418476!3d22.470567742372584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd6fcf93fffff%3A0x12b289338778d80f!2sIT%20Building%2C%20Chittagong%20University!5e0!3m2!1sen!2sbd!4v1628505226223!5m2!1sen!2sbd" width="450" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 text-white ps-4">
+                <h4 class="mb-4 mt-4">Links</h4>
+                <p class="py-1">
+                    <i class="fas fa-circle fa-xs"></i>
+                    <a class="text-white ps-3" href="#">Home</a>
+                </p>
+                <p class="py-1">
+                    <i class="fas fa-circle fa-xs"></i>
+                    <a class="text-white ps-3" href="#about-us">Terms & conditions</a>
+                </p>
+                
+            </div>
+        </div>
+        </div>
+        <p class="text-center text-white pt-4">Copyright ©2021 All rights reserved</p>
+    </footer>
+    <!--Footer END -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
